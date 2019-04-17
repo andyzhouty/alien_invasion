@@ -5,6 +5,7 @@ from ship import Ship
 import game_functions as gf
 
 def run_game():
+    """The main framework of alien_invasion"""
     # Initialize game, settings, and create a screen object
     pygame.init()
     ai_settings = Settings()
