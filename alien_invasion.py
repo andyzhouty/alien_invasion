@@ -4,6 +4,7 @@ from settings import Settings
 from ship import Ship
 import game_functions as gf
 
+
 def run_game():
     """The main framework of alien_invasion"""
     # Initialize game, settings, and create a screen object
@@ -21,5 +22,6 @@ def run_game():
         gf.check_events(ship)
         ship.update()
         gf.update_screen(ai_settings, screen, ship)
+
 
 run_game()
