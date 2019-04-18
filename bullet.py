@@ -13,9 +13,10 @@ class Bullet(Sprite):
         # Create a bullet rect at (0, 0) and then set correct position.
         self.rect = pygame.Rect(0, 0, ai_settings.bullet_width,
                                 ai_settings.bullet_height)
-        self.rect.centerx = ship.rect.top
+        self.rect.centerx = ship.rect.centerx
+        self.rect.top = ship.rect.top
 
-        # Store the bullet;s position as a decimal value.
+        # Store the bullet's position as a decimal value.
         self.y = float(self.rect.y)
 
         self.color = ai_settings.bullet_color
