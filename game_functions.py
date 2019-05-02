@@ -18,7 +18,7 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets, stats):
         fire_bullet(ai_settings, screen, ship, bullets)
     elif event.key == pygame.K_q:
         sys.exit()
-    elif event.key == pygame.K_q:
+    elif event.key == pygame.K_p:
         stats.game_active = True
 
 
