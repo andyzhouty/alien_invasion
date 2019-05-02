@@ -6,7 +6,7 @@ from alien import Alien
 from time import sleep
 
 
-def check_keydown_events(event, ai_settings, screen, ship, bullets):
+def check_keydown_events(event, ai_settings, screen, ship, bullets, stats):
     """Respond to keypresses."""
     if event.key == pygame.K_RIGHT:
         # Move the ship to the right.
@@ -18,6 +18,8 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
         fire_bullet(ai_settings, screen, ship, bullets)
     elif event.key == pygame.K_q:
         sys.exit()
+    elif event.key == pygame.K_q:
+        stats.game_active = True
 
 
 def fire_bullet(ai_settings, screen, ship, bullets):
@@ -44,7 +46,8 @@ def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens,
             sys.exit()
 
         elif event.type == pygame.KEYDOWN:
-            check_keydown_events(event, ai_settings, screen, ship, bullets)
+            check_keydown_events(event, ai_settings, screen, ship, bullets,
+                                 stats)
 
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
